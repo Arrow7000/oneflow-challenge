@@ -5,7 +5,7 @@ const axios = require('axios');
 
 const apiRoot = 'https://itunes.apple.com/search?';
 
-
+// Helpers
 function filter(albumList) {
     const map = {};
     for (const album of albumList) {
@@ -17,6 +17,7 @@ function filter(albumList) {
     return filtered;
 }
 
+// Routes
 router.get('/albums', async(req, res) => {
     const { artist } = req.query;
     const encodedArtist = encodeURIComponent(artist);
