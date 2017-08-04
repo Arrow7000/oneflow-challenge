@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static('public'));
 
 // API
-const api = require('./api');
+const api = require('./routes/api');
 app.use('/api', api);
 
 
