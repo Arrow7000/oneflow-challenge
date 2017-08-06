@@ -6,15 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>OneFlow Challenge</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>OneFlow ChallenIge</h1>
+    <h1>OneFlow Challenge</h1>
     <div id="app">
-        {{albums}}
+        <input type="text" v-model="filterText">
+        <div class="album__container">
+            <figure class="album__single" v-for="album in filter(filterText, albums)">
+                <img class="album__img" :src="album.artworkUrl100">
+                <figcaption class="album__name"><strong>{{album.collectionName}}</strong></figcaption>
+                <figcaption class="album__artist">{{album.artistName}}</figcaption>
+            </figure>
+        </div>
     </div>
-    <script src="dist/bundle.js"></script>
 
+    <script src="dist/bundle.js"></script>
 </body>
 
 </html>
