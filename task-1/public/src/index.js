@@ -3,6 +3,7 @@ import axios from 'axios';
 import { root } from './config';
 
 const artist = 'David Bowie';
+
 const encodedArtist = encodeURIComponent(artist);
 
 new Vue({
