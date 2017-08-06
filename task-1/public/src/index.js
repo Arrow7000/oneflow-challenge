@@ -1,18 +1,22 @@
 import Vue from 'vue'
-// import App from './components/App.vue'
+import axios from 'axios';
+import { root } from './config';
 
-// const template = `
-// <div>test</div>
-// `;
-
+const artist = 'David Bowie';
+const encodedArtist = encodeURIComponent(artist);
 
 new Vue({
     el: '#app',
-    // render: h => h(App),
-    // template,
     data: {
-        test: true,
-        albums: ['hi', 'there']
+        albums: []
     },
-    // components: { App }
+    created() {
+        this.fetchAlbums();
+    },
+    methods: {
+        async fetchAlbums() {
+            const response = await axios.get(`${root}/api/albums?artist=${encodedArtist}`)
+            this.albums = response.data;
+        }
+    }
 });
