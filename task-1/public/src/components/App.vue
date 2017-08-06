@@ -1,20 +1,39 @@
 <template>
     <div>
-        <input type="text" placeholder="Taylor Swift" v-model="search">
-        <p>{{message}}</p>
-        <p>You are searching for "{{search}}"</p>
-        <todo-item></todo-item>
+        {{albums}}
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+import { root } from '../config';
 import TodoItem from './TodoItem.vue';
 export default {
-    data() {
-        return {
-            search: '',
-            message: 'hi there'
-        }
+    // data() {
+    //     return {
+    //         search: '',
+    //         message: 'hi there'
+    //     }
+    // },
+    // data() {
+    //     return {
+    //         search: '',
+    //         message: 'hi there',
+    //         albums: [{ title: 'album1' }]
+    //     }
+    // },
+    // data: {
+    //     search: '',
+    //     message: 'hi there',
+    //     albums: [{ title: 'album1' }]
+    // },
+    props: ['albums'],
+    created() {
+        // axios.get(root + '/api/albums')
+        //     .then(response => {
+        //         this.data.albums = response.data;
+        //     })
+        //     .catch(console.error);
     },
     components: { TodoItem }
 }

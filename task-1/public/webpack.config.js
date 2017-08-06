@@ -21,5 +21,10 @@ module.exports = {
         contentBase: path.join(__dirname, "/public"),
         publicPath: '/dist/',
         filename: 'bundle.js'
+    },
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.js'
+        }
     }
 }
