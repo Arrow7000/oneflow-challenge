@@ -6,12 +6,6 @@ module.exports = {
         path: path.resolve(__dirname, 'public', 'dist'),
         filename: 'bundle.js'
     },
-    module: {
-        rules: [{
-            test: /\.vue$/,
-            loader: 'vue-loader'
-        }]
-    },
     devtool: 'source-map',
     devServer: {
         compress: true,
