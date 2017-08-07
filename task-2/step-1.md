@@ -2,8 +2,7 @@
 
 - What do you think is wrong with the code, if anything?
 
-There is a lot of nesting, which makes the code difficult to read. The function also makes little use of named variables or functions to make the code easier to reason about. This makes it harder to see at a glance what's going on.
-
+    There is a lot of nesting, which makes the code difficult to read. The function also makes little use of named variables or functions to make the code easier to reason about. This makes it harder to see at a glance what's going on.
 
 - Can you see any potential problems that could lead to exceptions
 
